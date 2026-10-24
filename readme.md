@@ -1,11 +1,11 @@
 ⚙️ SRUJAN AI — Personal AI Assistant
-Your Personal Cross-Platform AI Assistant — Created by Srujan Shrishail Koulagi
+The Ultimate Cross-Platform Personal AI Assistant — Created by Srujan Shrishail Koulagi
 📺 Watch the full setup video on YouTube
 
 A real-time voice AI that can hear, see, speak, and control your computer — on any OS. Supports Windows, macOS, and Linux. Built on the Gemini Live API for native audio streaming, delivering zero subscriptions and total digital autonomy.
 
 ✨ Overview
-SRUJAN gave the assistant a screen. SRUJAN AI lets you choose what runs it.
+SRUJAN AI gave the assistant a screen. SRUJAN AI lets you choose what runs it.
 
 Until now this was a Gemini assistant, and only that. If you had no quota left, no connection, or a rule that says your microphone does not leave the building, you had no assistant. SRUJAN AI adds a second way to hold the conversation — speech recognition, a language model and a voice, assembled from parts you pick in ⚙ → ENGINE & PROVIDERS — and a way to point the assistant's own background requests at a different model without touching the voice at all.
 
@@ -319,7 +319,7 @@ A reasoning model's <think> block was read aloud in full before the answer. Filt
 A background GPU alert appeared in the log as though the user had said it — "You: heyyy open whatsapp [SYSTEM_ALERT] GPU load is at 96%…" — and, worse, cancelled the answer in progress and replaced it with a reply about the graphics card. Injected text is no longer a transcript, and it waits its turn instead of destroying one.
 A voice chosen in the panel was never fetched, so the assistant had no voice at all until somebody pressed TEST. Choosing a voice is the request to use it: it downloads on selection, and again at connect if it is still missing.
 Loading a neural voice holds the GIL for a measured 2.4 seconds, which stalled the interface on the first sentence. Both the voice and the speech model are warmed at connect, in parallel.
-📦 Previously, in SRUJAN
+📦 Previously, in SRUJAN AI
 One new dependency for the whole release — yt-dlp, and only to turn a YouTube page into something Qt can play.
 
 The display
@@ -371,7 +371,7 @@ The shape
 🧩 Everything bundled drives the computer
 The bundled skill list had grown to seventeen, and some of it was nobody's business but its author's. Not everyone updates games; everyone opens applications.
 
-SRUJAN trims it to twelve, and every one of them does the same kind of thing: drive this machine. Applications, the browser, files, the desktop, the screen, the clock, the weather, the display. The rule is written into the project tree, so the next skill lands in the right folder without anyone having to ask.
+SRUJAN AI trims it to twelve, and every one of them does the same kind of thing: drive this machine. Applications, the browser, files, the desktop, the screen, the clock, the weather, the display. The rule is written into the project tree, so the next skill lands in the right folder without anyone having to ask.
 
 This is not only tidiness. Every bundled skill is declared to the model on every connection, whether you ever use it or not. The declarations sent at startup dropped from 16,827 characters to 12,907 — roughly a thousand tokens off every session, and five fewer wrong tools for the model to reach for.
 
@@ -388,10 +388,10 @@ SRUJAN answered the video's soundtrack. The microphone now follows the video's s
 Qt's multimedia backend printed an ffmpeg banner to the console on every play, containing the signed streaming URL with the viewer's IP address in it. Silenced at startup.
 Every launch paid 201 ms for a plugin nobody had asked to use. Discovery executes every file in plugins/, and youtube_video imported requests and youtube_transcript_api at module scope. Deferring one of them would have saved nothing — the transcript library imports requests itself. Both are now checked with find_spec, which answers "is it installed?" without executing anything, and loaded on first use: plugin discovery 211 ms → 39 ms.
 A plugin that needed a file from a newer Mark was rejected with "pip install core". The loader could not tell this project's own packages from a third-party one, so it told people to install a same-named stranger from an index — wrong, and a supply-chain hazard dressed up as a fix. First-party names now say the app is behind the plugin and that there is nothing to install.
-Built on the SRUJAN foundation releases foundation: the 🧑‍🎤 Holographic Avatar, 👄 Lip-Sync, 🎚️ Push-to-Talk, 🔇 Self-Echo Guard, 🧩 Plugin System, ♾️ Unlimited Sessions, 🎨 Live Theming and 🎙️ Wake Word are all still here.
+Built on the Mark LI–LV foundation: the 🧑‍🎤 Holographic Avatar, 👄 Lip-Sync, 🎚️ Push-to-Talk, 🔇 Self-Echo Guard, 🧩 Plugin System, ♾️ Unlimited Sessions, 🎨 Live Theming and 🎙️ Wake Word are all still here.
 
 🔄 The Foundation Update — in every Mark from LII
-These four landed across earlier SRUJAN releases at the same time, after each of those releases had already shipped. They are not what any one of those versions originally introduced; they are the floor all of them now stand on, so moving up a Mark never costs you something the one below it had.
+These four landed across Mark LII, LIII, LIV and LV at the same time, after each of those releases had already shipped. They are not what any one of those versions originally introduced; they are the floor all of them now stand on, so moving up a Mark never costs you something the one below it had.
 
 No new dependencies. No bundled asset files. No hardcoded language, and nothing that assumes one operating system.
 
@@ -464,7 +464,7 @@ The assistant could die on a log line. Status lines carry emoji and arrows (📤
 Every computer command paid for two model round trips. computer_settings made an entire second Gemini call, inside the tool, purely to translate the request into one of its own action names — because the declaration only said "The action to perform", so the model rarely filled it in. When that second call failed, the fallback was description.lower().replace(" ", "_"), which turns the Turkish for "turn it down" into sesi_kis and straight into "Unknown action". The declaration now names all 56 actions and the rest is spelling tolerance handled locally by difflib in microseconds. When nothing matches it suggests real action names instead of dead-ending.
 An unresolvable saved audio device, or one the driver refuses to open, falls back to the system default and says so — on both the microphone and the speakers.
 A rejected session-resumption handle is dropped after one attempt, so an expired handle can never be replayed on every retry and prevent the reconnect it exists to protect.
-🗺️ SRUJAN Roadmap
+🗺️ SRUJAN AI Roadmap
 Mark	Focus
 XLIX	Auto-start · clipboard intelligence · assistant customization
 L	Session memory · background monitoring · proactive 2.0 · instant vision
@@ -477,8 +477,8 @@ LVI	Choose your engine · local & third-party models · Whisper + Piper in ~50 l
 shared	The last five above also shipped to LIII, LIV and LV at the same time — moving up a Mark never loses them
 LVII+	Interrupt by voice · conversation history · full file access · security camera · Obsidian
 ⚡ Quick Start
-# Clone your own SRUJAN AI repository here (replace this with your GitHub URL)
-cd Mark-LVI
+git clone https://github.com/Srujan Koulagi/SRUJAN-AI.git
+cd SRUJAN-AI
 python setup.py        # installs deps for YOUR OS + the browser automation engine
 python main.py
 setup.py only ever installs what your operating system needs — the Windows-only libraries are skipped automatically on macOS and Linux, and vice-versa. It also checks your Python version up front, so a wrong interpreter fails with a sentence instead of a wall of pip output. Prefer to do it by hand? pip install -r requirements.txt works too.
@@ -632,5 +632,6 @@ Personal and non-commercial use only. Licensed under Creative Commons BY-NC 4.0.
 👤 Connect with the Creator
 Created and customized by Srujan Shrishail Koulagi.
 
+Platform	Link
+Name	Srujan Shrishail Koulagi
 Email	srujankoulagi0@gmail.com
-Project	SRUJAN AI — Personal AI Assistant
